@@ -1,6 +1,6 @@
 # Vicuna-LoRA
 
-- 2023.04.16 Obtain the Vicuna weights by merging the LLaMA-13B model and Vicuna delta weights v1.1, and upload to the huggingfae.co model repository https://huggingface.co/uukuguy/vicuna-v1.1
+- 2023.04.16 Obtain the Vicuna weights by merging the LLaMA-13B model and Vicuna delta weights v1.1, and upload to the huggingfae.co model repository https://huggingface.co/uukuguy/vicuna-13b-v1.1
 
 ------
 # FastChat
