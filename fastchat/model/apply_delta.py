@@ -8,15 +8,15 @@ import argparse
 
 import torch
 from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForCausalLM
-
+from transformers import AutoTokenizer, AutoModelForCausalLM, LlamaTokenizer
+# from transformers.models.llama.tokenization_llama import LlamaTokenizer as LLaMATokenizer
 
 def apply_delta(base_model_path, target_model_path, delta_path):
     print(f"Loading the base model from {base_model_path}")
     base = AutoModelForCausalLM.from_pretrained(
         base_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
-    base_tokenizer = AutoTokenizer.from_pretrained(
-        base_model_path, use_fast=False)
+    # base_tokenizer = AutoTokenizer.from_pretrained(base_model_path, use_fast=False)
+    base_tokenizer = LlamaTokenizer.from_pretrained(base_model_path, add_eos_token=True)
 
     print(f"Loading the delta from {delta_path}")
     delta = AutoModelForCausalLM.from_pretrained(delta_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
