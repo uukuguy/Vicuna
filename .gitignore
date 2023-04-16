@@ -6,7 +6,6 @@ dist
 
 # Log
 *.log
-*.json
 
 # Data
 !**/alpaca-data-conversation.json
