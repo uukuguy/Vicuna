@@ -1,4 +1,5 @@
-MODELS_PATH=/hy-tmp
+# MODELS_PATH=/hy-tmp
+MODELS_PATH=/opt/local/llm_models/LLaMA/huggingface.co
 BASE_MODEL_PATH=${MODELS_PATH}/llama-13b-hf
 VICUNA_MODEL_PATH=${MODELS_PATH}/vicuna-13b-v1.1
 #VICUNA_MODEL_PATH=${MODELS_PATH}/vicuna-13b-v0
@@ -14,7 +15,7 @@ local_chat:
 	python3 -m fastchat.serve.cli \
 		--style rich \
 		--model-path ${VICUNA_MODEL_PATH} \
-		--conv-template vicuna_v1.1 \
+		--load-8bit \
 		--max-new-tokens 1024 \
 		--temperature 0.9 \
 		--num-gpus 1
